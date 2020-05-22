@@ -1,9 +1,21 @@
 package com.netent.thebookstore.dao.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ISBN;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "author")
     private String author;
+
+    @Column(name = "price")
     private int price;
 
     public Book(int ISBN, String title, String author, int price) {
