@@ -2,6 +2,7 @@ package com.netent.thebookstore.dao.repository;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import com.netent.thebookstore.dao.model.Book;
@@ -40,7 +41,7 @@ public class BookStoreRepositoryTest {
     @Test
     public void testtoFindAllByisbn() {
         // Find an inserted record
-        Book foundBook = repository.findByisbn(1);
+        Book foundBook = repository.findByisbn(10);
         assertThat(foundBook.getTitle(), is(equalTo("Harry Potter")));
     }
 
