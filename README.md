@@ -10,6 +10,9 @@ This is a simple project providing the REST API to `Add a book to a store`, `Sea
 
 Let's start with the `Book` and `BooksRepository`. These two components come's under Data Access. Where Book is the MODEL and BooksRepository is the REPOSITORY. Book model has five attributes `isbn`, `title`, `author`, `price`.Every object that is stored in BookRepository is of type Book.
 
+Note:
+    `isbn` of a book is unique
+    
 `BookStoreService` is the integral part of the project which interacts with the DAO's(Data Access Object) and as well as Web layer. Major business logic resides here.
 
 Lastly the `BookStoreController` the web layer of the project, this is where the user or any client interacts with the project.
@@ -182,6 +185,3 @@ The REST API to the app is described below.
     Content-Length: 74
     
     Please Pay 100 Bucks
-    
-Note:
-    isbn of a book is unique
