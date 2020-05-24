@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "books")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ISBN;
+    @Column(name = "isbn",unique = true)
+    private int isbn;
 
     @Column(name = "title")
     private String title;
@@ -18,19 +18,27 @@ public class Book {
     @Column(name = "price")
     private int price;
 
-    public Book(int ISBN, String title, String author, int price) {
-        this.ISBN = ISBN;
+    @Column(name = "count")
+    private int count;
+
+    public Book() {
+        count = 1;
+    }
+
+    public Book(int isbn, String title, String author, int price) {
+        this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.price = price;
+        count = 1;
     }
 
-    public int getISBN() {
-        return ISBN;
+    public int getisbn() {
+        return isbn;
     }
 
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
+    public void setisbn(int isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitle() {
@@ -55,5 +63,13 @@ public class Book {
 
     public void setPrice(int price){
         this.price = price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

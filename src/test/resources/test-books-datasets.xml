@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <books isbn="1" title="Harry Potter" author="J K Rowling" price="120" count="1"/>
+    <books isbn="2" title="2 States" author="Chetan Bhagath" price="80" count="1"/>
+    <books isbn="3" title="SuperMan" author="DC" price="90" count="1"/>
+    <books isbn="4" title="IronMan" author="Marvel" price="100" count="1"/>
+</dataset>
