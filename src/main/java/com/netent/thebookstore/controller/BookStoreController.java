@@ -54,7 +54,7 @@ public class BookStoreController {
         }
         List<Book> books = bookStoreService.getBooksByTitle(title);
         if(books.size() == 0){
-            return new ResponseEntity("No book found with given title", HttpStatus.NOT_FOUND);
+            return new ResponseEntity("No book found with given title", HttpStatus.OK);
         }
         return new ResponseEntity(books,HttpStatus.FOUND);
     }
@@ -67,15 +67,24 @@ public class BookStoreController {
         if(author.trim().isEmpty() || author == null){
             return new ResponseEntity("Missing Mandatory Parameter",HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity(bookStoreService.getBooksByAuthor(author),HttpStatus.FOUND);
+        List<Book> books = bookStoreService.getBooksByAuthor(author);
+
+        if(books.size() == 0){
+            return new ResponseEntity("No book found with given author", HttpStatus.OK);
+        }
+        return new ResponseEntity(books,HttpStatus.FOUND);
     }
 
     /*This method handles the GET requests to fetch the book using isbn in the Coverage api
      * If the book is not available null is retured
      * */
     @RequestMapping(path = "/searchcoverage/{isbn}", method = RequestMethod.GET)
-    private List<String> getBookByCoverage(@PathVariable int isbn){
-        return bookStoreService.getBooksMatchedWithCoverage(isbn);
+    private HttpEntity getBookByCoverage(@PathVariable int isbn){
+        List<String> posts = bookStoreService.getBooksMatchedWithCoverage(isbn);
+        if (posts.size() == 0){
+            return new ResponseEntity("No book found with given author", HttpStatus.OK);
+        }
+        return new ResponseEntity(posts, HttpStatus.FOUND);
     }
 
     /*This method handles the PUT requests to buy a book from the store

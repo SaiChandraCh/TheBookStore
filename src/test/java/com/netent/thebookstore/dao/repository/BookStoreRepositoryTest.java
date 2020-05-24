@@ -46,7 +46,7 @@ public class BookStoreRepositoryTest {
     @Test
     public void testtoFindAllByisbn() {
         // Find an inserted record
-        Book foundBook = repository.findByisbn(10);
+        Book foundBook = repository.findByisbn(1);
         assertThat(foundBook.getTitle(), is(equalTo("Harry Potter")));
     }
 

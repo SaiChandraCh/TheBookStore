@@ -1,5 +1,7 @@
 package com.netent.thebookstore.dao.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 /*
 	author: Sai Chandra Chilupui
@@ -22,6 +24,7 @@ public class Book {
     private int price;
 
     @Column(name = "count")
+//    @JsonIgnore
     private int count;
 
     public Book() {

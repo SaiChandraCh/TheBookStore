@@ -74,7 +74,7 @@ public class BookStoreControllerTest {
         mockMvc.perform(get("/book-store/searchbytitle/Harry")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(book)))
-                .andExpect(status().isFound());
+                .andExpect(status().isOk());
     }
 
 
@@ -84,7 +84,7 @@ public class BookStoreControllerTest {
         mockMvc.perform(get("/book-store/searchbyauthor/Rowling")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(book)))
-                .andExpect(status().isFound());
+                .andExpect(status().isOk());
     }
 
     @Test
