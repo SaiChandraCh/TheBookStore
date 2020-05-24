@@ -53,8 +53,9 @@ The REST API to the app is described below.
 
 ### Request
 
-`POST /book-store/add`
-
+    `POST /book-store/add`
+    
+    Body:
     {"isbn" : 38412, "title":"dolorem", "author":"cumque", "price":100 }
 
 ### Response
@@ -64,7 +65,8 @@ The REST API to the app is described below.
     Connection: close
     Content-Type: application/json
     Content-Length: 74
-
+    
+    Body:
     {"isbn":38412,"title":"dolorem","author":"cumque","price":100,"count":1}
   
 
@@ -82,7 +84,7 @@ The REST API to the app is described below.
     Content-Type: application/json
     Content-Length: 74
     
-
+    Body:
     {"isbn":38412,"title":"dolorem","author":"cumque","price":100,"count":1}
 
 ## Search a Book in the Store by using title
@@ -99,7 +101,7 @@ The REST API to the app is described below.
     Content-Type: application/json
     Content-Length: 74
     
-
+    Body:
     {"isbn":38412,"title":"dolorem","author":"cumque","price":100,"count":1}
 
 ## Search a Book in the Store by using author
@@ -116,6 +118,7 @@ The REST API to the app is described below.
     Content-Type: application/json
     Content-Length: 74
     
+    Body:
     {"isbn":38412,"title":"dolorem","author":"cumque","price":100,"count":1}
 
 ## Search a Book in the Coverage api
@@ -131,7 +134,8 @@ The REST API to the app is described below.
     Connection: close
     Content-Type: application/json
     Content-Length: 74
-
+    
+    Body:
     [
         "eum et est occaecati", 
         "dolorem eum magni eos aperiam quia",
@@ -174,6 +178,7 @@ The REST API to the app is described below.
 
     `PUT /book-store/buy`
     
+    Body: 
     {"isbn":38412,"title":"dolorem","author":"cumque","price":100,"count":1}
     
 ### Response
@@ -184,4 +189,5 @@ The REST API to the app is described below.
     Content-Type: application/json
     Content-Length: 74
     
-    Please Pay 100 Bucks
+    Body:
+    Please Pay 100 Bucks 
