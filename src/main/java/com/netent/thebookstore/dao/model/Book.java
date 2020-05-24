@@ -1,7 +1,10 @@
 package com.netent.thebookstore.dao.model;
 
 import javax.persistence.*;
-
+/*
+	author: Sai Chandra Chilupui
+	last updated date: Sun, 24 May 2020
+*/
 @Entity
 @Table(name = "books")
 public class Book {
